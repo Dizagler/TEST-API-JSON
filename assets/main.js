@@ -8,11 +8,12 @@ const userName = prompt('Ваше имя:')
 nameBlock.innerHTML = `${userName}`;
 
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  e.preventDefault()
+
   if (input.value) {
     socket.emit('chat message', {
-      message: input.value,
-      name: userName
+    message: input.value,
+    name: userName
     })
     input.value='';
   }
@@ -23,3 +24,4 @@ socket.on('chat message', (data) => {
   item.innerHTML = `<span>${data.name}</span>: ${data.message}`
   messages.appendChild(item)
 })
+console.log(messages)
