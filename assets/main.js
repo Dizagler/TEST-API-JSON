@@ -20,8 +20,8 @@ form.addEventListener('submit', (e) => {
 })
 
 socket.on('chat message', (data) => {
-  const item = document.createElement('li')
-  item.innerHTML = `<span>${data.name}</span>: ${data.message}`
-  messages.appendChild(item)
+  const item = document.createElement('li');
+  item.textContent = `<span>${data.name}</span>: ${data.message}`
+  messages.appendChild(item);
 })
 
